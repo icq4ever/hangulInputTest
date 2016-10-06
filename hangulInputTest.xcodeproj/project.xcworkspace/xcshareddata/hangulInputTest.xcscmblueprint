@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "E33BE383399DB32E5E9A0A028F7075940AAE82D3",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "6E85F585BA7940AD33F8E74F0EE05D55511194B6" : 9223372036854775807,
+    "E33BE383399DB32E5E9A0A028F7075940AAE82D3" : 9223372036854775807
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "8E834535-7776-4B33-B92C-6162DE2F417A",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "6E85F585BA7940AD33F8E74F0EE05D55511194B6" : "..\/..\/addons\/ofxTrueTypeFontUC",
+    "E33BE383399DB32E5E9A0A028F7075940AAE82D3" : "hangulInputTest\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "hangulInputTest",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "hangulInputTest.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/hironishihara\/ofxTrueTypeFontUC.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6E85F585BA7940AD33F8E74F0EE05D55511194B6"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "bitbucket.org:icq4ever\/hangulinputtest.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E33BE383399DB32E5E9A0A028F7075940AAE82D3"
+    }
+  ]
+}

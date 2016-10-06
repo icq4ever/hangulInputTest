@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CEF2575C2D170E1C414B246F /* AutomataKR.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 087B19D95EFA6F1706F43615 /* AutomataKR.cpp */; };
 		E4328149138ABC9F0047C5CB /* openFrameworksDebug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4328148138ABC890047C5CB /* openFrameworksDebug.a */; };
 		E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1D0A3A1BDC003C02F2 /* main.cpp */; };
 		E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */; };
+		E8DE41551DA62F04007374D7 /* HangulAutomata.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E8DE41531DA62F04007374D7 /* HangulAutomata.cpp */; };
 		EDD3448A1F73BF611F4D46A8 /* ofxTrueTypeFontUC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 43B2FDAED735D73FF734F634 /* ofxTrueTypeFontUC.cpp */; };
 /* End PBXBuildFile section */
 
@@ -44,10 +44,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		087B19D95EFA6F1706F43615 /* AutomataKR.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 4; name = AutomataKR.cpp; path = src/AutomateKR/AutomataKR.cpp; sourceTree = SOURCE_ROOT; };
 		22FDF81C4A468B788F424022 /* ofxTrueTypeFontUC.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 30; name = ofxTrueTypeFontUC.h; path = ../../../addons/ofxTrueTypeFontUC/src/ofxTrueTypeFontUC.h; sourceTree = SOURCE_ROOT; };
 		43B2FDAED735D73FF734F634 /* ofxTrueTypeFontUC.cpp */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.cpp; fileEncoding = 30; name = ofxTrueTypeFontUC.cpp; path = ../../../addons/ofxTrueTypeFontUC/src/ofxTrueTypeFontUC.cpp; sourceTree = SOURCE_ROOT; };
-		DAF2BCCE15E17F1894A421CF /* AutomataKR.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.h; fileEncoding = 4; name = AutomataKR.h; path = src/AutomateKR/AutomataKR.h; sourceTree = SOURCE_ROOT; };
 		E4328143138ABC890047C5CB /* openFrameworksLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = openFrameworksLib.xcodeproj; path = ../../../libs/openFrameworksCompiled/project/osx/openFrameworksLib.xcodeproj; sourceTree = SOURCE_ROOT; };
 		E4B69B5B0A3A1756003C02F2 /* hangulInputTestDebug.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hangulInputTestDebug.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4B69E1D0A3A1BDC003C02F2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = src/main.cpp; sourceTree = SOURCE_ROOT; };
@@ -56,6 +54,8 @@
 		E4B6FCAD0C3E899E008CF71C /* openFrameworks-Info.plist */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = text.plist.xml; path = "openFrameworks-Info.plist"; sourceTree = "<group>"; };
 		E4EB691F138AFCF100A09F29 /* CoreOF.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = CoreOF.xcconfig; path = ../../../libs/openFrameworksCompiled/project/osx/CoreOF.xcconfig; sourceTree = SOURCE_ROOT; };
 		E4EB6923138AFD0F00A09F29 /* Project.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = Project.xcconfig; sourceTree = "<group>"; };
+		E8DE41531DA62F04007374D7 /* HangulAutomata.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HangulAutomata.cpp; path = HangulAutomata/HangulAutomata.cpp; sourceTree = "<group>"; };
+		E8DE41541DA62F04007374D7 /* HangulAutomata.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HangulAutomata.h; path = HangulAutomata/HangulAutomata.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,13 +70,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0325B7E1AECE42D0B1DA5502 /* AutomateKR */ = {
+		0325B7E1AECE42D0B1DA5502 /* HangulAutomata */ = {
 			isa = PBXGroup;
 			children = (
-				087B19D95EFA6F1706F43615 /* AutomataKR.cpp */,
-				DAF2BCCE15E17F1894A421CF /* AutomataKR.h */,
+				E8DE41531DA62F04007374D7 /* HangulAutomata.cpp */,
+				E8DE41541DA62F04007374D7 /* HangulAutomata.h */,
 			);
-			name = AutomateKR;
+			name = HangulAutomata;
 			sourceTree = "<group>";
 		};
 		0816FAE6729FD8D7120D0B77 /* src */ = {
@@ -138,7 +138,7 @@
 				E4B69E1D0A3A1BDC003C02F2 /* main.cpp */,
 				E4B69E1E0A3A1BDC003C02F2 /* ofApp.cpp */,
 				E4B69E1F0A3A1BDC003C02F2 /* ofApp.h */,
-				0325B7E1AECE42D0B1DA5502 /* AutomateKR */,
+				0325B7E1AECE42D0B1DA5502 /* HangulAutomata */,
 			);
 			path = src;
 			sourceTree = SOURCE_ROOT;
@@ -241,8 +241,8 @@
 			files = (
 				E4B69E200A3A1BDC003C02F2 /* main.cpp in Sources */,
 				E4B69E210A3A1BDC003C02F2 /* ofApp.cpp in Sources */,
-				CEF2575C2D170E1C414B246F /* AutomataKR.cpp in Sources */,
 				EDD3448A1F73BF611F4D46A8 /* ofxTrueTypeFontUC.cpp in Sources */,
+				E8DE41551DA62F04007374D7 /* HangulAutomata.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
