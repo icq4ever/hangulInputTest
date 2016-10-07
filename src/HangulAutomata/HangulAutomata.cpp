@@ -125,62 +125,6 @@ HangulAutomata::~HangulAutomata(){
 }
 
 
-// 한글 키 테이블
-void HangulAutomata::initHangulKeyMapTable(){
-	m_HangulKeyTable['q'] = 7;		// ㅂ
-	m_HangulKeyTable['Q'] = 8;		// ㅃ
-	m_HangulKeyTable['w'] = 12;		// ㅈ
-	m_HangulKeyTable['W'] = 13;		// ㅉ
-	m_HangulKeyTable['e'] = 3;		// ㄷ
-	m_HangulKeyTable['E'] = 4;		// ㄸ
-	m_HangulKeyTable['r'] = 0;		// ㄱ
-	m_HangulKeyTable['R'] = 1;		// ㄲ
-	m_HangulKeyTable['t'] = 9;		// ㅅ
-	m_HangulKeyTable['T'] = 10;		// ㅆ
-	m_HangulKeyTable['y'] = 31;		// ㅛ
-	m_HangulKeyTable['Y'] = 31;		// ㅛ
-	m_HangulKeyTable['u'] = 25;		// ㅕ
-	m_HangulKeyTable['U'] = 25;		// ㅕ
-	m_HangulKeyTable['i'] = 21;		// ㅑ
-	m_HangulKeyTable['I'] = 21;		// ㅑ
-	m_HangulKeyTable['o'] = 20;		// ㅐ
-	m_HangulKeyTable['O'] = 22;		// ㅒ
-	m_HangulKeyTable['p'] = 24;		// ㅔ
-	m_HangulKeyTable['P'] = 26;		// ㅖ
-	m_HangulKeyTable['a'] = 6;		// ㅁ
-	m_HangulKeyTable['A'] = 6;		// ㅁ
-	m_HangulKeyTable['s'] = 2;		// ㄴ
-	m_HangulKeyTable['S'] = 2;		// ㄴ
-	m_HangulKeyTable['d'] = 11;		// ㅇ
-	m_HangulKeyTable['D'] = 11;		// ㅇ
-	m_HangulKeyTable['f'] = 5;		// ㄹ
-	m_HangulKeyTable['F'] = 5;		// ㄹ
-	m_HangulKeyTable['g'] = 18;		// ㅎ
-	m_HangulKeyTable['G'] = 18;		// ㅎ
-	m_HangulKeyTable['h'] = 27;		// ㅗ
-	m_HangulKeyTable['H'] = 27;		// ㅗ
-	m_HangulKeyTable['j'] = 23;		// ㅓ
-	m_HangulKeyTable['J'] = 23;		// ㅓ
-	m_HangulKeyTable['k'] = 19;		// ㅏ
-	m_HangulKeyTable['K'] = 19;		// ㅏ
-	m_HangulKeyTable['l'] = 39;		// ㅣ
-	m_HangulKeyTable['L'] = 39;		// ㅣ
-	m_HangulKeyTable['z'] = 15;		// ㅋ
-	m_HangulKeyTable['Z'] = 15;		// ㅋ
-	m_HangulKeyTable['x'] = 16;		// ㅌ
-	m_HangulKeyTable['X'] = 16;		// ㅌ
-	m_HangulKeyTable['c'] = 14;		// ㅊ
-	m_HangulKeyTable['C'] = 14;		// ㅊ
-	m_HangulKeyTable['v'] = 17;		// ㅍ
-	m_HangulKeyTable['V'] = 17;		// ㅍ
-	m_HangulKeyTable['b'] = 36;		// ㅠ
-	m_HangulKeyTable['B'] = 36;		// ㅠ
-	m_HangulKeyTable['n'] = 32;		// ㅜ
-	m_HangulKeyTable['N'] = 32;		// ㅜ
-	m_HangulKeyTable['m'] = 37;		// ㅡ
-	m_HangulKeyTable['M'] = 37;		// ㅡ
-}
-
 // 버퍼 초기화
 void HangulAutomata::Clear() {
 	m_nStatus		= HS_FIRST;
@@ -189,14 +133,36 @@ void HangulAutomata::Clear() {
 	m_completeWord	= NULL;
 }
 
-void HangulAutomata::pushASCII(char _c){
-	if(static_cast<int>(_c) % 255 > 254)	return;
+void HangulAutomata::pushASCII(int keyCode){
+//	int keyCode = static_cast<int>(_c);
+	
+	if(keyCode < 0) {
+		m_nStatus = HS_FIRST;
+		
+		if(keyCode == KEY_CODE_SPACE) { // 띄어쓰기
+			if(ingWord)		completeText += ingWord;
+			completeText += L' ';
+			
+			ingWord = NULL;
+		} else if(keyCode == KEY_CODE_ENTER) {  // 내려쓰기
+			if(ingWord)		completeText += ingWord;
+			
+			completeText += L"\n";	// windows
+			//			completeText += L"\n";
+			
+			ingWord = NULL;
+			m_completeWord = NULL;
+		} else if(keyCode == KEY_CODE_BACKSPACE) { // 지우기
+			if(ingWord)		ingWord = NULL;
+			if(completeText.length() > 0)	completeText.pop_back();
+		}
+	}
+	
+	
 	if(ingWord)	completeText += ingWord;
 	
-	completeText += static_cast<wchar_t>(_c);
+	completeText += static_cast<wchar_t>(keyCode);
 	ingWord = NULL;
-	//		completeText += SOUND_TABLE[nKeyCode];
-	
 	
 	m_nStatus = HS_FIRST;
 }
@@ -218,23 +184,13 @@ void HangulAutomata::SetKeyCode(int nKeyCode){
 		} else if(nKeyCode == KEY_CODE_ENTER) {  // 내려쓰기
 			if(ingWord)		completeText += ingWord;
 			
-			completeText += L"\n";	// windows
-//			completeText += L"\n";
+			completeText += L"\n";
 			
 			ingWord = NULL;
 			m_completeWord = NULL;
 		} else if(nKeyCode == KEY_CODE_BACKSPACE) { // 지우기
 			if(ingWord)		ingWord = NULL;
 			else if(completeText.length() > 0)	completeText.pop_back();
-//			if(ingWord)	{
-//				if(completeText.length() > 0)	{
-//					string::size_type n = completeText.find_last_of(L"\n")+1;
-//					if( n == string::npos )		completeText = completeText.substr(0, completeText.length() - 1);
-//					else						completeText = completeText.substr(0, completeText.length() - 2);
-//				}
-//			} else {
-//				m_nStatus = DownGradeIngWordStatus(ingWord);
-//			}
 		}
 		
 		m_nStatus = HS_FIRST;
@@ -248,8 +204,6 @@ void HangulAutomata::SetKeyCode(int nKeyCode){
 
 		completeText += SOUND_TABLE[nKeyCode];
 		ingWord = NULL;
-//		completeText += SOUND_TABLE[nKeyCode];
-		
 		
 		m_nStatus = HS_FIRST;
 		return;

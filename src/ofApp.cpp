@@ -6,9 +6,9 @@ void ofApp::setup(){
 	ofSetVerticalSync(true);
 	ofSetLogLevel(OF_LOG_SILENT);
 	ofSetFrameRate(60);
-//	automateKR = new AutomateKR();
+	//	automateKR = new AutomateKR();
 	wcout.imbue(locale("en_US.UTF-8"));
-
+	
 	// loadFont
 	textFont = new ofxTrueTypeFontUC();
 	consoleFont = new ofxTrueTypeFontUC();
@@ -69,49 +69,49 @@ void ofApp::setup(){
 	m_HangulKeyTable['m']	=  37;	// ㅡ
 	m_HangulKeyTable['M']	=  37;	// ㅡ
 	
-	m_HangulKeyTable['`']	=  68;	// ㅡ
-	m_HangulKeyTable['1']	=  69;	// ㅡ
-	m_HangulKeyTable['2']	=  70;	// ㅡ
-	m_HangulKeyTable['3']	=  71;	// ㅡ
-	m_HangulKeyTable['4']	=  72;	// ㅡ
-	m_HangulKeyTable['5']	=  73;	// ㅡ
-	m_HangulKeyTable['6']	=  74;	// ㅡ
-	m_HangulKeyTable['7']	=  75;	// ㅡ
-	m_HangulKeyTable['8']	=  76;	// ㅡ
-	m_HangulKeyTable['9']	=  77;	// ㅡ
-	m_HangulKeyTable['0']	=  78;	// ㅡ
-	m_HangulKeyTable['-']	=  79;	// ㅡ
-	m_HangulKeyTable['=']	=  80;	// ㅡ
-	m_HangulKeyTable['[']	=  81;	// ㅡ
-	m_HangulKeyTable[']']	=  82;	// ㅡ
-	m_HangulKeyTable['\\']	=  83;	// ㅡ
-	m_HangulKeyTable[';']	=  84;	// ㅡ
-	m_HangulKeyTable['\'']	=  85;	// ㅡ
-	m_HangulKeyTable[',']	=  86;	// ㅡ
-	m_HangulKeyTable['.']	=  87;	// ㅡ
-	m_HangulKeyTable['/']	=  88;	// ㅡ
-		
-	m_HangulKeyTable['~']	=  89;	// ㅡ
-	m_HangulKeyTable['!']	=  90;	// ㅡ
-	m_HangulKeyTable['@']	=  91;	// ㅡ
-	m_HangulKeyTable['#']	=  92;	// ㅡ
-	m_HangulKeyTable['$']	=  93;	// ㅡ
-	m_HangulKeyTable['%']	=  94;	// ㅡ
-	m_HangulKeyTable['^']	=  95;	// ㅡ
-	m_HangulKeyTable['&']	=  96;	// ㅡ
-	m_HangulKeyTable['*']	=  97;	// ㅡ
-	m_HangulKeyTable['(']	=  98;	// ㅡ
-	m_HangulKeyTable[')']	=  99;	// ㅡ
-	m_HangulKeyTable['_']	= 100;	// ㅡ
-	m_HangulKeyTable['+']	= 101;	// ㅡ
-	m_HangulKeyTable['{']	= 102;	// ㅡ
-	m_HangulKeyTable['}']	= 103;	// ㅡ
-	m_HangulKeyTable['|']	= 104;	// ㅡ
-	m_HangulKeyTable[':']	= 105;	// ㅡ
-	m_HangulKeyTable['"']	= 106;	// ㅡ
-	m_HangulKeyTable['<']	= 107;	// ㅡ
-	m_HangulKeyTable['>']	= 108;	// ㅡ
-	m_HangulKeyTable['?']	= 109;	// ㅡ
+	m_HangulKeyTable['`']	=  68;	// `
+	m_HangulKeyTable['1']	=  69;	// 1
+	m_HangulKeyTable['2']	=  70;	// 2
+	m_HangulKeyTable['3']	=  71;	// 3
+	m_HangulKeyTable['4']	=  72;	// 4
+	m_HangulKeyTable['5']	=  73;	// 5
+	m_HangulKeyTable['6']	=  74;	// 6
+	m_HangulKeyTable['7']	=  75;	// 7
+	m_HangulKeyTable['8']	=  76;	// 8
+	m_HangulKeyTable['9']	=  77;	// 9
+	m_HangulKeyTable['0']	=  78;	// 0
+	m_HangulKeyTable['-']	=  79;	// -
+	m_HangulKeyTable['=']	=  80;	// =
+	m_HangulKeyTable['[']	=  81;	// [
+	m_HangulKeyTable[']']	=  82;	// ]
+	m_HangulKeyTable['\\']	=  83;	// \
+	m_HangulKeyTable[';']	=  84;	// ;
+	m_HangulKeyTable['\'']	=  85;	// '
+	m_HangulKeyTable[',']	=  86;	// ,
+	m_HangulKeyTable['.']	=  87;	// .
+	m_HangulKeyTable['/']	=  88;	// /
+	
+	m_HangulKeyTable['~']	=  89;	// ~
+	m_HangulKeyTable['!']	=  90;	// !
+	m_HangulKeyTable['@']	=  91;	// @
+	m_HangulKeyTable['#']	=  92;	// #
+	m_HangulKeyTable['$']	=  93;	// $
+	m_HangulKeyTable['%']	=  94;	// %
+	m_HangulKeyTable['^']	=  95;	// ^
+	m_HangulKeyTable['&']	=  96;	// &
+	m_HangulKeyTable['*']	=  97;	// *
+	m_HangulKeyTable['(']	=  98;	// (
+	m_HangulKeyTable[')']	=  99;	// )
+	m_HangulKeyTable['_']	= 100;	// _
+	m_HangulKeyTable['+']	= 101;	// +
+	m_HangulKeyTable['{']	= 102;	// {
+	m_HangulKeyTable['}']	= 103;	// }
+	m_HangulKeyTable['|']	= 104;	// |
+	m_HangulKeyTable[':']	= 105;	// :
+	m_HangulKeyTable['"']	= 106;	// "
+	m_HangulKeyTable['<']	= 107;	// <
+	m_HangulKeyTable['>']	= 108;	// >
+	m_HangulKeyTable['?']	= 109;	// ?
 	
 	keyboardLanguage = KB_ENGLISH;
 	
@@ -120,7 +120,7 @@ void ofApp::setup(){
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
+	
 }
 
 //--------------------------------------------------------------
@@ -133,7 +133,7 @@ void ofApp::draw(){
 	
 	ofSetHexColor(0xFFFF00);
 	ofDrawBitmapStringHighlight(ss, 50, 50, ofColor(ofColor::yellow), ofColor(ofColor::black));
-//	consoleFont->drawStringAsShapes(ss, 50, 50);
+	//	consoleFont->drawStringAsShapes(ss, 50, 50);
 }
 
 void ofApp::exit(){
@@ -157,121 +157,117 @@ int ofApp::getInputMethod(){
 void ofApp::keyPressed(int key){
 	int code = 0;
 	
-	switch(key){
-		case OF_KEY_TAB:
-			if(ofGetElapsedTimeMillis() - lastKeyComboCheckTimer > 50){
-				toggleInputMethod();
-				lastKeyComboCheckTimer = ofGetElapsedTimeMillis();
-			}
-			break;
-	}
-	
-	if(getInputMethod() == 0  && key < 255 && key > 0){	// english
-		automata.pushASCII(key);
+	if(getInputMethod() == 0 ){	// english
+		switch(key){
+			case OF_KEY_LEFT_SHIFT:
+			case OF_KEY_RIGHT_SHIFT:
+			case OF_KEY_SHIFT:
+			case OF_KEY_ALT:
+			case OF_KEY_LEFT_ALT:
+			case OF_KEY_RIGHT_ALT:
+			case OF_KEY_COMMAND:
+			case OF_KEY_LEFT_COMMAND:
+			case OF_KEY_RIGHT_COMMAND:
+			case OF_KEY_CONTROL:
+			case OF_KEY_LEFT_CONTROL:
+			case OF_KEY_RIGHT_CONTROL:
+				break;
+			case OF_KEY_RETURN:
+				automata.SetKeyCode(KEY_CODE_ENTER);
+				break;
+			case ' ':
+				automata.SetKeyCode(KEY_CODE_SPACE);
+				break;
+			case OF_KEY_BACKSPACE:
+				automata.SetKeyCode(KEY_CODE_BACKSPACE);	// KEY_CODE_BACKSPACE
+				break;
+				
+				// disable arrow keys
+			case OF_KEY_LEFT:
+			case OF_KEY_RIGHT:
+			case OF_KEY_UP:
+			case OF_KEY_DOWN:
+				break;
+			case OF_KEY_TAB:
+				if(ofGetElapsedTimeMillis() - lastKeyComboCheckTimer > 50){
+					toggleInputMethod();
+					lastKeyComboCheckTimer = ofGetElapsedTimeMillis();
+				}
+				break;
+			default:
+				automata.pushASCII(key);
+				break;
+		}
+		
 	} else {
-//	if((key < 65  && key >32) || (key >90 && key < 127)){
-//		automata.SetKeyCode(-4, key);
-//		// 특수문자들
-////		m_strText += static_cast<char>(key);
-////		m_wstrText.push_back(static_cast<char>(key));
-//	}
-	
-	switch(key){
-		case OF_KEY_RETURN:
-			automata.SetKeyCode(KEY_CODE_ENTER);
-			break;
-		case ' ':
-			automata.SetKeyCode(KEY_CODE_SPACE);
-			break;
-		case OF_KEY_BACKSPACE:
-			automata.SetKeyCode(KEY_CODE_BACKSPACE);	// KEY_CODE_BACKSPACE
-			break;
-			
-		// disable arrow keys
-		case OF_KEY_LEFT:
-		case OF_KEY_RIGHT:
-		case OF_KEY_UP:
-		case OF_KEY_DOWN:
-			break;
-		case OF_KEY_TAB:
-			if(ofGetElapsedTimeMillis() - lastKeyComboCheckTimer > 50){
-				toggleInputMethod();
-				lastKeyComboCheckTimer = ofGetElapsedTimeMillis();
-			}
-			break;
-		default:
-			// 테이블에서 키를 찾아서 해당 코드를 리턴한다..
-			auto it = m_HangulKeyTable.find(key);
-			if(it != m_HangulKeyTable.end()){
-				code = it->second;
-				automata.SetKeyCode(code);
-				ss = "key : " + to_string(static_cast<char>(key)) + " >> keyCode is : " + to_string(code);
-				cout << "key : " << static_cast<char>(key)  << " >> keyCode is : " << code << endl;
+		
+		switch(key){
+			case OF_KEY_LEFT_SHIFT:
+			case OF_KEY_RIGHT_SHIFT:
+			case OF_KEY_SHIFT:
+			case OF_KEY_ALT:
+			case OF_KEY_LEFT_ALT:
+			case OF_KEY_RIGHT_ALT:
+			case OF_KEY_COMMAND:
+			case OF_KEY_LEFT_COMMAND:
+			case OF_KEY_RIGHT_COMMAND:
+			case OF_KEY_CONTROL:
+			case OF_KEY_LEFT_CONTROL:
+			case OF_KEY_RIGHT_CONTROL:
+				break;
+			case OF_KEY_RETURN:
+				automata.SetKeyCode(KEY_CODE_ENTER);
+				break;
+			case ' ':
+				automata.SetKeyCode(KEY_CODE_SPACE);
+				break;
+			case OF_KEY_BACKSPACE:
+				automata.SetKeyCode(KEY_CODE_BACKSPACE);	// KEY_CODE_BACKSPACE
+				break;
 				
-				cout << "complete string is : \t" << m_strText << endl;
-				cout << "automata.ingWord is : \t";
-				wcout << automata.ingWord << endl;
-				cout << "==========================================" << endl;
-				
-			}
-			break;
+				// disable arrow keys
+			case OF_KEY_LEFT:
+			case OF_KEY_RIGHT:
+			case OF_KEY_UP:
+			case OF_KEY_DOWN:
+				break;
+			case OF_KEY_TAB:
+				if(ofGetElapsedTimeMillis() - lastKeyComboCheckTimer > 50){
+					toggleInputMethod();
+					lastKeyComboCheckTimer = ofGetElapsedTimeMillis();
+				}
+				break;
+			default:
+				// 테이블에서 키를 찾아서 해당 코드를 리턴한다..
+				auto it = m_HangulKeyTable.find(key);
+				if(it != m_HangulKeyTable.end()){
+					code = it->second;
+					automata.SetKeyCode(code);
+					ss = "key : " + to_string(static_cast<char>(key)) + " >> keyCode is : " + to_string(code);
+					cout << "key : " << static_cast<char>(key)  << " >> keyCode is : " << code << endl;
+					
+					cout << "complete string is : \t" << m_strText << endl;
+					cout << "automata.ingWord is : \t";
+					wcout << automata.ingWord << endl;
+					cout << "==========================================" << endl;
+					
+				}
+				break;
+		}
 	}
-	}
-//	if(key == OF_KEY_RETURN){
-//		automata.SetKeyCode(KEY_CODE_ENTER);
-////		automata.Clear();
-////		m_strText.clear();
-//	}
-//	if (key == ' '){
-//		automata.SetKeyCode(KEY_CODE_SPACE);	// KEY_CODE_SPACE
-////		m_strText.append(" ");
-//	}
-//	if (key == OF_KEY_BACKSPACE){
-//		automata.SetKeyCode(KEY_CODE_BACKSPACE);	// KEY_CODE_BACKSPACE
-//	} else {
-//		
-//		
-//		// 테이블에서 키를 찾아서 해당 코드를 리턴한다..
-//		auto it = m_HangulKeyTable.find(key);
-//		if(it != m_HangulKeyTable.end()){
-//			code = it->second;
-//			automata.SetKeyCode(code);
-//			ss = "key : " + to_string(static_cast<char>(key)) + " >> keyCode is : " + to_string(code);
-//			cout << "key : " << static_cast<char>(key)  << " >> keyCode is : " << code << endl;
-//			
-//			cout << "complete string is : \t" << m_strText << endl;
-//			cout << "automata.ingWord is : \t";
-//			wcout << automata.ingWord << endl;
-//			cout << "==========================================" << endl;
-//			
-//		}
-//		
-//		
-//	}
 	m_wstrText = automata.completeText + automata.ingWord;
-	//		cout << &m_wstrText << endl;
-	//		m_strText.assign(m_wstrText.begin(), m_wstrText.end());
 	
 	std::wstring_convert<std::codecvt_utf8<wchar_t>,wchar_t> convert;
 	m_strText.assign(convert.to_bytes(m_wstrText));
-
 	
-	//		m_strText.assign(str(m_wstrText));
-	//		wstring2string(m_strText, m_wstrText);
 	
-	// testing...
-	// 완성 문장과
-	// 조합전의 문자를 보여주자.
 	
-
-	
-
 	// work!!!
 	
-//	wcout.imbue(locale("en_US.UTF-8"));
-//	wcout << kr << endl;
-//	m_wstrText = L'ㄱㅏ';
-//	m_strText += m_strText.assign(m_strText.begin(), m_strText.end());
+	//	wcout.imbue(locale("en_US.UTF-8"));
+	//	wcout << kr << endl;
+	//	m_wstrText = L'ㄱㅏ';
+	//	m_strText += m_strText.assign(m_strText.begin(), m_strText.end());
 }
 
 
@@ -283,45 +279,45 @@ void ofApp::keyReleased(int key){
 
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y ){
-
+	
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
-
+	
 }
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
-
+	
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
-
+	
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseEntered(int x, int y){
-
+	
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseExited(int x, int y){
-
+	
 }
 
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
-
+	
 }
 
 //--------------------------------------------------------------
 void ofApp::gotMessage(ofMessage msg){
-
+	
 }
 
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo dragInfo){ 
-
+	
 }

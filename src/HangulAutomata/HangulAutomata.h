@@ -25,15 +25,13 @@ public:
 	
 	void initHangulKeyMapTable();			// 음성 테이블 로드
 	// english
-	void		pushASCII(char _c);
+	void		pushASCII(int key);
 	
 	void		Clear();					// 버퍼초기화
 	void		SetKeyCode(int nKeyCode);	// 키코드 받기 (정해진 int 코드값을 입력 받아 한글조합)
 	
 	wchar_t		ingWord;		// 작성중 글자
 	wstring		completeText;	// 완성 문자열
-	
-	map<char, int>			m_HangulKeyTable;
 	
 private:
 	enum	HAN_STATUS		// 단어조합상태
