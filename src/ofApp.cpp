@@ -11,9 +11,46 @@ void ofApp::setup(){
 	
 	// loadFont
 	textFont = new ofxTrueTypeFontUC();
+	hudFont = new ofxTrueTypeFontUC();
 	consoleFont = new ofxTrueTypeFontUC();
-	textFont->loadFont("AppleSDGothicNeo-Regular.otf", 30, true, true);
+	textFont->loadFont("AppleSDGothicNeo-Regular.otf", 24, true, true);
+	hudFont->loadFont("AppleSDGothicNeo-Regular.otf", 16, true, true);
 	consoleFont->loadFont("Andale Mono.ttf", 16, true, true);
+	
+	initKeyCode();
+	keyboardLanguage = KB_ENGLISH;
+	
+	lastKeyComboCheckTimer = ofGetElapsedTimeMillis();
+}
+
+//--------------------------------------------------------------
+void ofApp::update(){
+	
+}
+
+//--------------------------------------------------------------
+void ofApp::draw(){
+	ofBackground(0);
+	
+	displayLangHud(ofGetWidth()-80, 20);
+	
+	if(m_strText.length() != 0){
+		ofSetHexColor(0xFFFFFF);
+		textFont->drawStringAsShapes(m_strText, 50, 120);
+	}
+	
+	ofSetHexColor(0xFFFF00);
+	ofDrawBitmapStringHighlight(ss, 50, 50, ofColor(0xFFFF00), ofColor(0x000000));
+	//	consoleFont->drawStringAsShapes(ss, 50, 50);
+}
+
+void ofApp::exit(){
+	delete textFont;
+	delete hudFont;
+	delete consoleFont;
+}
+
+void ofApp::initKeyCode(){
 	
 	
 	m_HangulKeyTable['q']	=   7;	// ㅂ
@@ -112,35 +149,7 @@ void ofApp::setup(){
 	m_HangulKeyTable['<']	= 107;	// <
 	m_HangulKeyTable['>']	= 108;	// >
 	m_HangulKeyTable['?']	= 109;	// ?
-	
-	keyboardLanguage = KB_ENGLISH;
-	
-	lastKeyComboCheckTimer = ofGetElapsedTimeMillis();
 }
-
-//--------------------------------------------------------------
-void ofApp::update(){
-	
-}
-
-//--------------------------------------------------------------
-void ofApp::draw(){
-	ofBackground(0);
-	if(m_strText.length() != 0){
-		ofSetHexColor(0xFFFFFF);
-		textFont->drawStringAsShapes(m_strText, 50, 120);
-	}
-	
-	ofSetHexColor(0xFFFF00);
-	ofDrawBitmapStringHighlight(ss, 50, 50, ofColor(ofColor::yellow), ofColor(ofColor::black));
-	//	consoleFont->drawStringAsShapes(ss, 50, 50);
-}
-
-void ofApp::exit(){
-	delete textFont;
-	delete consoleFont;
-}
-
 void ofApp::toggleInputMethod(){
 	keyboardLanguage = (keyboardLanguage+1) %2 ;
 	cout << "KEYBOARD INPUT MODE : " ;
@@ -268,6 +277,28 @@ void ofApp::keyPressed(int key){
 	//	wcout << kr << endl;
 	//	m_wstrText = L'ㄱㅏ';
 	//	m_strText += m_strText.assign(m_strText.begin(), m_strText.end());
+}
+
+
+// 언어 설정 HUD 출력
+void ofApp::displayLangHud(float _x, float _y){
+	ofPushMatrix();
+	ofPushStyle();
+	{
+		ofTranslate(_x,	_y);
+		ofSetHexColor(0x333333);
+		ofFill();
+		ofDrawRectRounded(0, 0, 60, 60, 5);
+		
+		ofSetHexColor(0xFFFFFF);
+		if(keyboardLanguage == KB_ENGLISH){
+			hudFont->drawStringAsShapes("EN", 17, 38);
+		} else {
+			hudFont->drawStringAsShapes("한글", 12, 38);
+		}
+	}
+	ofPopStyle();
+	ofPopMatrix();
 }
 
 

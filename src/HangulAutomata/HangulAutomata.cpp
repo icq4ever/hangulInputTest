@@ -15,12 +15,12 @@ const int LIMIT_MIN = 0xAC00;		// 음성범위 MIN(가)
 const int LIMIT_MAX = 0xD7A3;		// 음성범위 MAX
 
 // 음성 테이블
-wchar_t SOUND_TABLE[110] = {
+const wchar_t SOUND_TABLE[110] = {
 	/* 초성 19자 0 ~ 18 */
-	L'ㄱ', L'ㄲ', L'ㄴ', L'ㄷ', L'ㄸ',	//  0 -  4
-	L'ㄹ', L'ㅁ', L'ㅂ', L'ㅃ', L'ㅅ',	//  5 -  9
-	L'ㅆ', L'ㅇ', L'ㅈ', L'ㅉ', L'ㅊ',	// 10 - 14
-	L'ㅋ', L'ㅌ', L'ㅍ', L'ㅎ',			// 15 - 18
+	L'ㄱ', L'ㄲ', L'ㄴ', L'ㄷ', L'ㄸ',	//   0 -   4
+	L'ㄹ', L'ㅁ', L'ㅂ', L'ㅃ', L'ㅅ',	//   5 -   9
+	L'ㅆ', L'ㅇ', L'ㅈ', L'ㅉ', L'ㅊ',	//  10 -  14
+	L'ㅋ', L'ㅌ', L'ㅍ', L'ㅎ',		//  15 -  18
 	/* 중성 21자 19 ~ 39 */
 	L'ㅏ', L'ㅐ', L'ㅑ', L'ㅒ', L'ㅓ',
 	L'ㅔ', L'ㅕ', L'ㅖ', L'ㅗ', L'ㅘ',
@@ -53,7 +53,7 @@ wchar_t SOUND_TABLE[110] = {
 };
 
 // 초성 합성 테이블  - 사용되지 않는듯..
-int MIXED_CHO_CONSON[5][3] = {
+const int MIXED_CHO_CONSON[5][3] = {
 //	{ 0, 0,15}, // ㄱ,ㄱ,ㅋ
 //	{15, 0, 1}, // ㅋ,ㄱ,ㄲ
 	{ 1, 0, 0}, // ㄲ,ㄱ,ㄱ
@@ -75,7 +75,7 @@ int MIXED_CHO_CONSON[5][3] = {
 };
 
 // 초성,중성 모음 합성 테이블
-int MIXED_VOWEL[7][3] = {
+const int MIXED_VOWEL[7][3] = {
 	{27,19,28},	// ㅗ,ㅏ,ㅘ
 	{27,20,29},	// ㅗ,ㅐ,ㅙ	// ㅘ + ㅣ -> ㅗ + ㅐ
 	{27,39,30},	// ㅗ,ㅣ,ㅚ
@@ -86,7 +86,7 @@ int MIXED_VOWEL[7][3] = {
 };
 
 // 종성 합성 테이블
-int MIXED_JONG_CONSON[12][3] = {
+const int MIXED_JONG_CONSON[12][3] = {
 	{41,59,43}, // ㄱ,ㅅ,ㄳ
 	{44,62,45}, // ㄴ,ㅈ,ㄵ
 	{44,67,46}, // ㄴ,ㅎ,ㄶ
@@ -102,7 +102,7 @@ int MIXED_JONG_CONSON[12][3] = {
 };
 
 // 종성 분해 테이블
-int DIVIDE_JONG_CONSON[12][3] = {
+const int DIVIDE_JONG_CONSON[12][3] = {
 	{41,59,43}, // ㄱ,ㅅ,ㄳ
 	{44,62,45}, // ㄴ,ㅈ,ㄵ
 	{44,67,46}, // ㄴ,ㅎ,ㄶ
@@ -443,7 +443,6 @@ void HangulAutomata::DecomposeConsonant() {
 				
 				m_completeWord = CombineHangul(3);
 				m_nPhonemez[0]	 = ToInitial(m_nPhonemez[4]);
-				
 				return;
 			}
 		}

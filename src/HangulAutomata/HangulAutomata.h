@@ -16,7 +16,6 @@
 #define		KEY_CODE_BACKSPACE		-3		// 지우기
 #define		KET_CODE_MUTE			-4		// 기타 키는 동작하지 않게 한다.
 
-
 class HangulAutomata
 {
 public:

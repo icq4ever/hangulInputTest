@@ -26,10 +26,14 @@ public:
 	void windowResized(int w, int h);
 	void dragEvent(ofDragInfo dragInfo);
 	void gotMessage(ofMessage msg);
+	void displayLangHud(float _x, float _y);		// 언어입력 상태 출력
 	
 	bool keyIsDown[255];
 	
+	void initKeyCode();
+	
 	ofxTrueTypeFontUC *textFont;
+	ofxTrueTypeFontUC *hudFont;
 	ofxTrueTypeFontUC *consoleFont;
 	
 	HangulAutomata automata;
