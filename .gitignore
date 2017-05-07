@@ -22,4 +22,4 @@ obj/*
 *.app/
 *.xcuserstate
 *.xcuserdata/*
-
+*.app*
